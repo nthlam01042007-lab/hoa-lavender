@@ -65,7 +65,7 @@ function startPetals() {
 ========================= */
 
 const message =
-    "Không biết phải nói thế nào cho thật hay, nên t chỉ muốn gửi một điều đơn giản: mong bạn luôn có những ngày thật nhẹ nhàng, luôn có lý do để mỉm cười và luôn gặp được thật nhiều điều tốt đẹp.";
+    "Chúc mẹ vũ thị mậu luôn happy.";
 
 
 function typeMessage() {
