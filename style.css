@@ -1,0 +1,881 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
+    background: #100b18;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at center,
+        #403052 0%,
+        #1d1527 45%,
+        #0d0911 100%);
+
+    transition: 1.2s ease;
+}
+
+#intro.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.08);
+}
+
+
+.intro-content {
+    text-align: center;
+    animation: introAppear 1.5s ease;
+}
+
+.tiny-flower {
+    font-size: 42px;
+    color: #d7b7ff;
+    margin-bottom: 20px;
+
+    animation: flowerFloat 3s ease-in-out infinite;
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c7afd9;
+    margin-bottom: 25px;
+}
+
+.intro-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1.15;
+    font-weight: 500;
+}
+
+.intro-content h1 span {
+    color: #c99aff;
+    font-style: italic;
+}
+
+.intro-text {
+    margin-top: 25px;
+    color: #aaa0b5;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+
+#openBtn {
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    border: 1px solid #9c78bd;
+    border-radius: 50px;
+
+    background: rgba(160, 120, 200, 0.1);
+    color: white;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+#openBtn span {
+    color: #d4aaff;
+    margin: 0 8px;
+}
+
+#openBtn:hover {
+    background: #80609b;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 35px rgba(190, 130, 255, .25);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+#main {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 30%,
+        #352540,
+        #17111f 55%,
+        #0d0912);
+
+    opacity: 0;
+    transition: 1.5s ease;
+}
+
+#main.show {
+    opacity: 1;
+}
+
+
+.background-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 35%;
+
+    transform: translate(-50%, -50%);
+
+    background: #9c5bd8;
+    filter: blur(180px);
+    opacity: .13;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: relative;
+    z-index: 5;
+
+    width: min(1100px, 90%);
+    margin: auto;
+
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.logo span {
+    color: #c999ff;
+    margin-right: 8px;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: #aaa0b5;
+    text-decoration: none;
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #d3a8ff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    width: min(1100px, 90%);
+    min-height: 760px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    align-items: center;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 5;
+}
+
+.eyebrow {
+    color: #b78add;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 11px;
+
+    margin-bottom: 25px;
+}
+
+.hero-text h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 5vw, 70px);
+    font-weight: 500;
+
+    line-height: 1.1;
+}
+
+.hero-text h2 i {
+    color: #c9a2ec;
+}
+
+.hero-text > p:not(.eyebrow) {
+    color: #a79eaf;
+
+    max-width: 390px;
+
+    margin-top: 30px;
+
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.line {
+    width: 70px;
+    height: 1px;
+
+    background: #9d73bd;
+
+    margin: 35px 0 20px;
+}
+
+.date {
+    color: #71677a;
+    font-size: 11px;
+}
+
+
+/* =========================
+   BOUQUET
+========================= */
+
+.bouquet-area {
+    position: relative;
+
+    height: 680px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow {
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    background: #8e56b8;
+
+    filter: blur(100px);
+
+    opacity: .16;
+}
+
+
+.bouquet {
+    position: relative;
+
+    width: 470px;
+    height: 600px;
+
+    animation: bouquetSway 5s ease-in-out infinite;
+    transform-origin: 50% 90%;
+}
+
+
+/* CÀNH */
+
+.stem {
+    position: absolute;
+
+    bottom: 185px;
+    left: 50%;
+
+    width: 5px;
+    height: 350px;
+
+    background: linear-gradient(
+        to right,
+        #344c32,
+        #78915d
+    );
+
+    border-radius: 10px;
+
+    transform-origin: bottom;
+}
+
+
+/* vị trí từng cành */
+
+.stem1 {
+    transform: rotate(-32deg);
+}
+
+.stem2 {
+    transform: rotate(-20deg);
+}
+
+.stem3 {
+    transform: rotate(-10deg);
+}
+
+.stem4 {
+    transform: rotate(0);
+}
+
+.stem5 {
+    transform: rotate(12deg);
+}
+
+.stem6 {
+    transform: rotate(25deg);
+}
+
+
+/* HOA NHỎ */
+
+.lavender-buds {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+
+    width: 35px;
+    height: 230px;
+
+    transform: translateX(-50%);
+}
+
+.lavender-buds i {
+    position: absolute;
+
+    width: 15px;
+    height: 23px;
+
+    background: linear-gradient(
+        135deg,
+        #c889f4,
+        #7442a0
+    );
+
+    border-radius: 70% 30% 70% 30%;
+
+    transform: rotate(45deg);
+
+    box-shadow:
+        0 0 10px rgba(180, 110, 240, .25);
+}
+
+.lavender-buds i:nth-child(1) {
+    top: 0;
+    left: 8px;
+}
+
+.lavender-buds i:nth-child(2) {
+    top: 25px;
+    left: -4px;
+}
+
+.lavender-buds i:nth-child(3) {
+    top: 48px;
+    left: 9px;
+}
+
+.lavender-buds i:nth-child(4) {
+    top: 72px;
+    left: -5px;
+}
+
+.lavender-buds i:nth-child(5) {
+    top: 95px;
+    left: 8px;
+}
+
+.lavender-buds i:nth-child(6) {
+    top: 118px;
+    left: -4px;
+}
+
+.lavender-buds i:nth-child(7) {
+    top: 141px;
+    left: 8px;
+}
+
+.lavender-buds i:nth-child(8) {
+    top: 165px;
+    left: -4px;
+}
+
+.lavender-buds i:nth-child(9) {
+    top: 188px;
+    left: 8px;
+}
+
+
+/* =========================
+   LÁ
+========================= */
+
+.leaf {
+    position: absolute;
+
+    width: 80px;
+    height: 23px;
+
+    background: linear-gradient(
+        90deg,
+        #45613c,
+        #78935e
+    );
+
+    border-radius: 100% 0 100% 0;
+}
+
+.leaf1 {
+    left: 100px;
+    bottom: 270px;
+    transform: rotate(-25deg);
+}
+
+.leaf2 {
+    left: 115px;
+    bottom: 330px;
+    transform: rotate(-10deg);
+}
+
+.leaf3 {
+    right: 90px;
+    bottom: 290px;
+    transform: scaleX(-1) rotate(-20deg);
+}
+
+.leaf4 {
+    right: 105px;
+    bottom: 350px;
+    transform: scaleX(-1) rotate(-10deg);
+}
+
+
+/* =========================
+   GIẤY
+========================= */
+
+.paper {
+    position: absolute;
+
+    bottom: 35px;
+    left: 50%;
+
+    width: 360px;
+    height: 330px;
+
+    transform: translateX(-50%);
+
+    clip-path: polygon(
+        8% 0,
+        92% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+.paper-back {
+    background: #e8d3ee;
+
+    transform:
+        translateX(-50%)
+        rotate(-7deg);
+}
+
+.paper-front {
+    background:
+        linear-gradient(
+            135deg,
+            #fff8fa,
+            #e4d1e9
+        );
+}
+
+
+/* =========================
+   NƠ
+========================= */
+
+.bow {
+    position: absolute;
+
+    bottom: 135px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 170px;
+    height: 80px;
+}
+
+.bow-left,
+.bow-right {
+    position: absolute;
+
+    width: 90px;
+    height: 55px;
+
+    background: #a56acb;
+
+    top: 5px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.2);
+}
+
+.bow-left {
+    right: 50%;
+    border-radius: 80% 20% 20% 80%;
+    transform: rotate(15deg);
+}
+
+.bow-right {
+    left: 50%;
+    border-radius: 20% 80% 80% 20%;
+    transform: rotate(-15deg);
+}
+
+.bow-center {
+    position: absolute;
+
+    width: 35px;
+    height: 45px;
+
+    background: #8750ad;
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 10px;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+}
+
+
+/* =========================
+   TAG
+========================= */
+
+.tag {
+    position: absolute;
+
+    bottom: 70px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(3deg);
+
+    width: 65px;
+    height: 85px;
+
+    padding-top: 16px;
+
+    text-align: center;
+
+    background: #fff8e9;
+
+    color: #765c7e;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 16px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+.tag small {
+    display: block;
+    color: #9a65bc;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-section {
+    min-height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 20px;
+}
+
+.message-card {
+    position: relative;
+
+    width: min(600px, 100%);
+
+    padding: 70px 60px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(210,170,240,.18);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.3);
+}
+
+.card-flower {
+    color: #c28df0;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.card-small {
+    color: #a989bc;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 10px;
+}
+
+.message-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    font-weight: 500;
+    margin: 25px 0;
+}
+
+#typing {
+    min-height: 100px;
+
+    color: #bcb2c2;
+
+    line-height: 2;
+
+    font-size: 14px;
+}
+
+.card-line {
+    width: 50px;
+    height: 1px;
+
+    background: #9364b4;
+
+    margin: 25px auto;
+}
+
+.message-card > span {
+    color: #8e8295;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.heart {
+    margin-top: 30px;
+
+    color: #c493e9;
+    font-size: 28px;
+
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   PETALS
+========================= */
+
+.petal {
+    position: fixed;
+
+    top: -30px;
+
+    width: 9px;
+    height: 15px;
+
+    background: #bd8de0;
+
+    border-radius: 100% 0 100% 0;
+
+    opacity: .55;
+
+    pointer-events: none;
+
+    animation: fall linear forwards;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    width: min(1100px, 90%);
+
+    margin: auto;
+
+    padding: 35px 0;
+
+    border-top: 1px solid rgba(255,255,255,.07);
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #655b6b;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes bouquetSway {
+
+    0%, 100% {
+        transform: rotate(-1deg);
+    }
+
+    50% {
+        transform: rotate(1.5deg);
+    }
+}
+
+@keyframes flowerFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes introAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes fall {
+
+    to {
+        transform:
+            translateY(110vh)
+            translateX(100px)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+        height: 70px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding-top: 70px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text > p:not(.eyebrow) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bouquet-area {
+        height: 600px;
+
+        transform: scale(.8);
+
+        margin-top: -30px;
+    }
+
+    .message-card {
+        padding: 50px 25px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
