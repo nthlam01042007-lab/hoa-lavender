@@ -65,7 +65,7 @@ function startPetals() {
 ========================= */
 
 const message =
-    "Chúc mày sinh nhật vui vẻ nhé không nghĩ mới đó mà đã đến sinh nhật mày rồi. Thôi thì chúc mày luôn vui vẻ tràn nhập niềm vui cuộc sống và có nhiều may mắn đến với bản thân.Mong là chúc kiểu này sẽ giúp có một niềm vui nho nhỏ trong ngày. Happy birthday Hằng nha";
+    "Chúc mày sinh nhật vui vẻ nhé không nghĩ mới đó mà đã đến sinh nhật mày rồi. Thôi thì chúc mày luôn vui vẻ tràn ập niềm vui cuộc sống và có nhiều may mắn đến với bản thân.Mong là chúc kiểu này sẽ giúp có một niềm vui nho nhỏ trong ngày. Happy birthday Hằng nha";
 
 function typeMessage() {
 
