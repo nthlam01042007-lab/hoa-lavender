@@ -65,8 +65,7 @@ function startPetals() {
 ========================= */
 
 const message =
-    "Chúc mẹ vũ thị mậu luôn happy.";
-
+    "Chúc mày sinh nhật vui vẻ nhé mới đó đã đến sinh nhật của mày rồi không nghĩ là nhanh vậy.Thôi thì tao chúc luôn luôn vui vẻ hạnh phúc có thật nhiều may mắn và luôn mỉm cười nhé.Tao làm cái này vì tao cũng không biết nên tặng mày cái gì thì hợp thôi thì làm ra cái này thì mong Hằng đón nhận.Xin lỗi vì hoa trông không đẹp lắm:))";
 
 function typeMessage() {
 
